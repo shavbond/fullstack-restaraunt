@@ -243,7 +243,7 @@
                                                <span class="badge badge-secondary">New</span></a>
                                         </li>
                                         <li class="nav-item">
-                                              <a class="nav-link" href="/admin/users">Create User Account
+                                              <a class="nav-link" href="/admin/users/create">Create User Account
                                                <span class="badge badge-secondary">New</span></a>
                                         </li>  
                                     </ul>

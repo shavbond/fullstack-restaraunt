@@ -21,12 +21,23 @@ Route::get('/offers', 'StaticPagesController@offers');
 //Admin Dashboard
 Route::get('/admin', 'admin\AdminController@dashboard');
 
+
+// Admin Users
+Route::get('/admin/users', 'admin\UsersController@index');
+
+Route::get('/admin/users/create', 'admin\UsersController@create');
+
+Route::get('/admin/users/{id}/edit', 'admin\UsersController@edit');
+
+
 // Admin Food Categories
 Route::get('/admin/food-categories', 'admin\FoodCategoriesController@index');
 
 Route::get('/admin/food-categories/create', 'admin\FoodCategoriesController@create');
 
 Route::get('/admin/food-categories/{id}/edit', 'admin\FoodCategoriesController@edit');
+
+
 
 // Admin Food Items
 Route::get('/admin/food-items', 'admin\FoodItemsController@index');
@@ -53,3 +64,7 @@ Route::get('/admin/login', function () {
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
