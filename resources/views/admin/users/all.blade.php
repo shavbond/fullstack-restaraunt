@@ -45,20 +45,24 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
+                                            @foreach ($users as $user)
+                                                <tr>
                                                 <th scope="row">1</th>
-                                                <td>Shavar A</td>
-                                                <td>2/28/2029</td>
-                                                <td><a href="/admin/users/1/edit">
+                                                <td>{{$user->fname}} {{$user->lname}}</td>
+                                                <td>{{date('m/d/Y', strtotime ($user->updated_at))}}</td>
+                                                <td><a href="/admin/users/{{$user->fname}}/edit">
                                                 <i class="far fa-edit"></i></a></td>
 
-                                                <td><a href="/admin/users/1/delete"
+                                                <td><a href="/admin/users/{{$user->fname}}/delete"
                                                 onclick="if (! confirm('Are you sure you want to delete?'))
                                                 {return false;} ">
                                                 <i class="fas fa-trash-alt"></i></a></td>
                                             </tr>
+                                            @endforeach
+                                            
                                         </tbody>
                                     </table>
+                                    {{ $users->links() }}
                                 </div>
                             </div>
                         </div>
