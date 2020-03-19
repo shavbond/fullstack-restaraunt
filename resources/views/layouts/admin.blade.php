@@ -144,7 +144,8 @@
 
                                       
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    <form id="logout-form" action="{{ route('logout') }}" 
+                                    method="POST" style="display: none;">
                                         @csrf
                                     </form>
                                      {{-- @guest
@@ -217,17 +218,17 @@
                                       <ul class="nav flex-column">
                                       <li class="nav-item">
                                             <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" 
-                                            data-target="#submenu-1-1" aria-controls="submenu-1-1">Food Categories</a>
+                                            data-target="#submenu-1-1" aria-controls="submenu-1-1">Food</a>
                                             <div id="submenu-1-1" class="collapse submenu" style="">
                                                 <ul class="nav flex-column">
                                                     <li class="nav-item">
-                                              <a class="nav-link" href="/admin/food-categories">All Food Categories
+                                              {{-- <a class="nav-link" href="/admin/food-categories">All Food Categories
                                                <span class="badge badge-secondary">New</span></a>
                                         </li>
                                         <li class="nav-item">
                                               <a class="nav-link" href="/admin/food-categories/create">New Food Category
                                                <span class="badge badge-secondary">New</span></a>
-                                        </li>
+                                        </li> --}}
                                          <li class="nav-item">
                                               <a class="nav-link" href="/admin/food-items">List Food Items
                                                <span class="badge badge-secondary">New</span></a>

@@ -17,7 +17,7 @@ class UsersController extends Controller
     }
     
     public function index(){
-        $users = User::paginate(6);
+        $users = User::paginate(10);
         return view('admin/users/all', [
             'users' => $users
         ]);
@@ -36,7 +36,13 @@ class UsersController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'role_id' => ['required']
         ]);
-
+        $user = new User();
+        $user->fname = request('fname');
+        $user->lname = request('lname');
+        $user->email = request('email');
+        $user->password = Hash::make(request('password'));
+        $user->save();
+        $user->roles()->attach(request('role_id'));
 
        
         return redirect('/admin/users');

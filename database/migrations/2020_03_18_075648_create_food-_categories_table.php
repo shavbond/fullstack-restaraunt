@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRolesTable extends Migration
+class CreateFoodCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateRolesTable extends Migration
      */
     public function up()
     {
-        Schema::create('roles', function (Blueprint $table) {
+        Schema::create('food_categories', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
+            $table->text('description');
+            $table->text('image_url');
             $table->timestamps();
         });
     }
@@ -27,9 +29,6 @@ class CreateRolesTable extends Migration
      */
     public function down()
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
-        Schema::drop('roles');
-        // Schema::dropIfExists('roles');
-        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+        Schema::dropIfExists('food_categories');
     }
 }

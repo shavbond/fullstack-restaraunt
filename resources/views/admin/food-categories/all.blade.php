@@ -1,14 +1,12 @@
+@extends('layouts.admin')
 
-  @extends('layouts.admin')
-
-
-  @section('content')
+@section('content')
             <div class="container-fluid  dashboard-content">
                 <!-- ============================================================== -->
                 <!-- pageheader -->
                 <!-- ============================================================== -->
                 <div class="row">
-                    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="page-header">
                             <h2 class="pageheader-title">Food Categories</h2>
                             <p class="pageheader-text">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet vestibulum mi. Morbi lobortis pulvinar quam.</p>
@@ -16,7 +14,6 @@
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="/admin" class="breadcrumb-link">Dashboard</a></li>
-                                        
                                         <li class="breadcrumb-item active" aria-current="page">Food Categories</li>
                                     </ol>
                                 </nav>
@@ -39,7 +36,7 @@
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th scope="col">I.D</th>
+                                                <th scope="col">id</th>
                                                 <th scope="col">Title</th>
                                                 <th scope="col">Date Created</th>
                                                 <th scope="col">Edit</th>
@@ -47,33 +44,38 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <th scope="row">1</th>
-                                                <td>Burgers</a></td>
-                                                <td>2/28/2029</td>
-                                                <td><a href="/admin/food-categories/1/edit">
-                                                <i class="far fa-edit"></i></a></td>
-                                                <td><a href="/admin/food-categories/1/delete"
-                                                onclick="if (! confirm('Are you sure you want to delete?'))
-                                                {return false;} ">
-                                                <i class="fas fa-trash-alt"></i></a></td>
-                                            </tr>
+                                            @foreach ($categories as $category)
+                                                <tr>
+                                                    <th scope="row">{{$category->id}}</th>
+                                                    <td>{{$category->title}} </td>
+                                                    <td>{{date('m/d/Y', strtotime($category->updated_at))}}</td>
+                                                    <td>
+                                                        <a href="/admin/food-categories/{{$category->id}}/edit"><i class="far fa-edit"></i></a>
+                                                    </td>
+                                                    <td>
+                                                        
+                                                        <a href="#" onclick="event.preventDefault();
+                                document.getElementById('delete-category-{{$category->id}}').submit();">
+                                    <i class="far fa-trash-alt"></i>
+                                </a>
+                                <form id="delete-category-{{$category->id}}" action="/admin/food-categories/{{$category->id}}/delete" method="POST" style="display: none;">
+                                                @method('DELETE')
+                                                @csrf
+                                            </form>
+
+                                                    </td>
+                                                </tr>    
+                                            @endforeach
+                                            
                                         </tbody>
                                     </table>
+                                    {{ $categories->links() }}
                                 </div>
                             </div>
                         </div>
                         <!-- ============================================================== -->
                         <!-- end basic table -->
+                        
                         <!-- ============================================================== -->
-                        <!-- ============================================================== -->
-                   </div>
-               
-           
-  @endsection 
-
-
-
-
-
- 
+                    </div>
+            
