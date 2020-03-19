@@ -38,14 +38,14 @@
                             <div class="card">
                                 <h5 class="card-header">Edit this item</h5>
                                 <div class="card-body">
-                                    <form method="POST" action="/admin/food-items">
+                                     <form method="POST" action="/admin/food-items/{{$item->id}}">
                                         @csrf
                                         @method('PUT')
                                         <div class="form-group">
                                             <label for="inputtitle">Title</label>
                                             <input id="inputtitle" type="text" class="form-control form-control-lg 
                                             @error('title') is-invalid @enderror" name="title" 
-                                            value="{{ old('title') }}" 
+                                            value="{{ old('title', $item->title) }}" 
                                             required autocomplete="title" 
                                             autofocus placeholder="Give item a Title">
 
@@ -60,7 +60,7 @@
                                             <label for="inputprice">Price</label>
                                             <input id="inputprice" type="text" class="form-control form-control-lg 
                                             @error('price') is-invalid @enderror" name="price" 
-                                            value="{{ old('price') }}" 
+                                            value="{{ old('price', $item->price) }}" 
                                             required autocomplete="price" 
                                             autofocus placeholder="Give item a price">
 
@@ -86,9 +86,9 @@
                                             <label for="inputimageurl">Image Url</label>
                                             <input id="inputimageurl" type="text" 
                                             class="form-control form-control-lg @error('image_url') is-invalid
-                                             @enderror" name="image_url" value="{{ old('image_url') }}" 
-                                             autocomplete="title" 
-                                             autofocus placeholder="Add the url to the item image">
+                                             @enderror" name="image_url" value="{{ old('image_url', $item->image_url) }}" 
+                                             required autocomplete="title" autofocus 
+                                             placeholder="Add the url to the item image">
 
                                             @error('image_url')
                                                 <span class="invalid-feedback" role="alert">
@@ -101,7 +101,7 @@
                                             <textarea id="inputdescription" type="text" 
                                             class="form-control form-control-lg @error('description')
                                              is-invalid @enderror" name="description" required autofocus 
-                                             placeholder="Write a Description">{{ old('description') }}</textarea>
+                                             placeholder="Write a Description">{{ old('description'. $item->description) }}</textarea>
 
                                             @error('description')
                                                 <span class="invalid-feedback" role="alert">

@@ -37,4 +37,4 @@ class CreateFoodItemsTable extends Migration
     {
         Schema::dropIfExists('food_items');
     }
-}
+} 

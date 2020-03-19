@@ -8,34 +8,61 @@
     <div class="row">
       <div class="col-sm-6">
   <h1>Get on the List!</h1>
-  <form>
+   <form method="POST" action="/reservations">
+              @csrf
   <div class="form-group">
-      <label for="firstnameinput">First Name</label>
-      <input type="text" 
-      class="form-control"
-       id="firstnameinput" name="fname" placeholder="John">
+        <label for="inputfname">First Name</label>
+        <input id="inputfname" type="text" class="form-control
+        form-control-lg @error('fname') is-invalid @enderror" 
+        name="fname" value="{{ old('fname') }}" required autocomplete="fname" 
+       autofocus placeholder="John">
+                 @error('fname')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+              </span>
+         @enderror
     </div>
     <div class="form-group">
-      <label for="lastnameinput">Last Name</label>
-      <input type="text" 
-      class="form-control"
-       id="lastnameinput" name="lname" placeholder="Doe">
+      <label for="inputlname">Last Name</label>
+      <input id="inputfname" type="text" class="form-control
+        form-control-lg @error('lname') is-invalid @enderror" 
+        name="lname" value="{{ old('lname') }}" required autocomplete="lname" 
+       autofocus placeholder="Doe">
+                 @error('lname')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+              </span>
+         @enderror
     </div>
     <div class="form-group">
-      <label for="emailinput">Email address</label>
-      <input type="email" name="email"
-       class="form-control" id="emailinput" 
-       placeholder="name@example.com">
+      <label for="inputemail">Email address</label>
+      <input id="inputemail" type="email" class="form-control
+        form-control-lg @error('email') is-invalid @enderror" 
+        name="email" value="{{ old('email') }}" required autocomplete="email" 
+       autofocus placeholder="John">
+
+                 @error('email')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+              </span>
+         @enderror
     </div>
     <div class="form-group">
-      <label for="phoneinput">Phone #</label>
-      <input type="text" 
-      class="form-control"
-       id="phoneinput" name="phone" placeholder="(215-XXX-XXXX)">
+      <label for="inputphonenumber">Phone #</label>
+      <input id="inputphonenumber" type="tel" class="form-control
+        form-control-lg @error('phone_number') is-invalid @enderror" 
+        name="phone_number" value="{{ old('phone_number') }}" required autocomplete="phone_number" 
+       autofocus placeholder="ex. 214-234-3409">
+                 @error('phone_number')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+              </span>
+         @enderror
     </div>
     <div class="form-group">
       <label for="guestinput">How many Guests?</label>
-      <select class="form-control" 
+      <select name="guests_total" class="form-control
+        form-control-lg @error('guests_total') is-invalid @enderror" 
       name="guests" id="guestinput">
         <option value="1">1</option>
         <option value="2">2</option>
@@ -43,16 +70,27 @@
         <option value="4">4</option>
         <option value="5">5</option>
       </select>
+      @error('guests_total')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+              </span>
+         @enderror
     </div>
     <div class="form-group">
       <label for="timeinput">What Time?</label>
-      <select class="form-control" name="time" id="timeinput">
+      <select class="form-control
+        form-control-lg @error('time') is-invalid @enderror" name="time" id="timeinput">
         <option value="6">6:00PM</option>
         <option value="7">7:00PM</option>
         <option value="8">8:00PM</option>
         <option value="9">9:00PM</option>
         <option value="10">10:00PM</option>
       </select>
+      @error('time')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+              </span>
+         @enderror
     </div>
     <div class="form-group">
       <button type="submit" class="btn btn-primary mb-2">Confirm</button>

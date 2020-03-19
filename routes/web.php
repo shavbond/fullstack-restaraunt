@@ -13,10 +13,17 @@ Route::get('/menu/{slug}', 'StaticPagesController@about');
 
 Route::get('/reservations', 'StaticPagesController@reservations');
 
+Route::post('/reservations', 'StaticPagesController@SaveReservation');
+
+Route::get('/reservations/thank-you', 'StaticPagesController@thankyou');
+
 Route::get('/contact', 'StaticPagesController@contact');
 
-
 Route::get('/offers', 'StaticPagesController@offers');
+
+Route::get('/offers/thank-you', 'StaticPagesController@ThankYou');
+
+Route::post('/offers', 'StaticPagesController@registerMember');
 
 //Admin Dashboard
 Route::get('/admin', 'admin\AdminController@dashboard');
@@ -64,8 +71,15 @@ Route::put('/admin/food-items/{id}/', 'admin\FoodItemsController@update');
 Route::delete('/admin/food-items/{id}/delete', 'admin\FoodItemsController@delete');
 
 //Admin Customers
-Route::get('/admin/offers-members', 'admin\CustomersController@allOffersMembers');
 
+//Admin Members
+Route::get('/admin/members', 'admin\MemberController@index');
+
+Route::delete('/admin/members/{id}/delete', 'admin\MemberController@delete');
+
+
+
+//Admin RSVP
 Route::get('/admin/reservations', 'admin\CustomersController@allReservations');
 
 

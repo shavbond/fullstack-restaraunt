@@ -287,6 +287,10 @@ table {
   font-family: "Montserrat", sans-serif;
 }
 
+#offers-page .thank-you h1 {
+  text-align: center;
+}
+
 #offers-page form .form-group label {
   color: black;
   font-weight: 700;

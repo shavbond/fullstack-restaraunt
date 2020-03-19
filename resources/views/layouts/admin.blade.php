@@ -91,7 +91,7 @@
                               <ul class="dropdown-menu dropdown-menu-right connection-dropdown">
                                   <li class="connection-list">
                                       <div class="row">
-                                          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+                                          {{-- <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
                                               <a href="#" class="connection-item"><img src="/assets/images/github.png" alt="" > <span>Github</span></a>
                                           </div>
                                           <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
@@ -100,7 +100,7 @@
                                           <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
                                               <a href="#" class="connection-item"><img src="/assets/images/dropbox.png" alt="" > <span>Dropbox</span></a>
                                           </div>
-                                      </div>
+                                      </div> --}}
                                       <div class="row">
                                           <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
                                               <a href="#" class="connection-item"><img src="/assets/images/bitbucket.png" alt=""> <span>Bitbucket</span></a>
@@ -229,10 +229,10 @@
                                               <a class="nav-link" href="/admin/food-categories/create">New Food Category
                                                <span class="badge badge-secondary">New</span></a>
                                         </li> --}}
-                                         <li class="nav-item">
+                                         {{-- <li class="nav-item">
                                               <a class="nav-link" href="/admin/food-items">List Food Items
                                                <span class="badge badge-secondary">New</span></a>
-                                        </li>
+                                        </li> --}}
                                          <li class="nav-item">
                                               <a class="nav-link" href="/admin/food-items/create">New Food Item
                                                <span class="badge badge-secondary">New</span></a>
@@ -252,11 +252,15 @@
                                   <div id="submenu-3" class="collapse submenu" style="">
                                       <ul class="nav flex-column">
                                           <li class="nav-item">
-                                              <a class="nav-link" href="/admin/offers-members">Offers' Members
+                                              <a class="nav-link" href="/admin/members">Offers' Members
                                                <span class="badge badge-secondary">New</span></a>
                                         </li>  
                                         <li class="nav-item">
                                               <a class="nav-link" href="/admin/reservations">Reservations
+                                               <span class="badge badge-secondary">New</span></a>
+                                        </li>  
+                                        <li class="nav-item">
+                                              <a class="nav-link" href="/admin/reservations">New Reservation
                                                <span class="badge badge-secondary">New</span></a>
                                         </li>  
                                         
@@ -316,7 +320,7 @@
               <!-- ============================================================== -->
               <!-- footer -->
               <!-- ============================================================== -->
-              <div class="footer">
+              {{-- <div class="footer">
                   <div class="container-fluid">
                       <div class="row">
                           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
@@ -331,7 +335,7 @@
                           </div>
                       </div>
                   </div>
-              </div>
+              </div> --}}
               <!-- ============================================================== -->
               <!-- end footer -->
               <!-- ============================================================== -->
