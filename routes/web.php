@@ -70,7 +70,6 @@ Route::put('/admin/food-items/{id}/', 'admin\FoodItemsController@update');
 
 Route::delete('/admin/food-items/{id}/delete', 'admin\FoodItemsController@delete');
 
-//Admin Customers
 
 //Admin Members
 Route::get('/admin/members', 'admin\MemberController@index');
@@ -78,9 +77,24 @@ Route::get('/admin/members', 'admin\MemberController@index');
 Route::delete('/admin/members/{id}/delete', 'admin\MemberController@delete');
 
 
+//Admin Settings
+Route::get('/admin/settings/general', 'admin\SettingController@general');
+
+Route::put('/admin/settings/general', 'admin\SettingController@saveGeneral');
+
+Route::get('/admin/settings/seo', 'admin\SettingController@seo');
+
+Route::put('/admin/settings/seo', 'admin\SettingController@saveSeo');
+
+Route::get('/admin/settings/social', 'admin\SettingController@social');
+
+Route::put('/admin/settings/social', 'admin\SettingController@saveSocial');
+
 
 //Admin RSVP
-Route::get('/admin/reservations', 'admin\CustomersController@allReservations');
+Route::get('/admin/reservations', 'admin\ReservationController@index');
+
+Route::delete('/admin/reservations/{id}/delete', 'admin\ReservationsController@delete');
 
 
 

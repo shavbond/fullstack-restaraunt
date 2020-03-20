@@ -14,7 +14,7 @@ class CreateFoodItemsTable extends Migration
     public function up()
     {
         Schema::create('food_items', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id();
             $table->string('title');
             $table->text('description');
             $table->text('image_url')->nullable();

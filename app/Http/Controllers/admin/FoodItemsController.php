@@ -69,9 +69,9 @@ class FoodItemsController extends Controller
         return redirect('/admin/food-items');
 
     }
-    public function delete($id){
-        $item = FoodItem::find($id);
-        $item->delete();
-        return redirect('/admin/food-items');
-    }
+    // public function delete($id){
+    //     $item = FoodItem::find($id);
+    //     $item->delete();
+    //     return redirect('/admin/food-items');
+    // }
 }
