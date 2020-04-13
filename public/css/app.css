@@ -217,6 +217,47 @@ table {
   }
 }
 
+#contact-page {
+  padding: 100px;
+}
+
+#contact-page h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 2.5rem;
+}
+
+#contact-page h3 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: black;
+}
+
+#contact-page p {
+  font-size: 0.9rem;
+  line-height: 2;
+  margin-bottom: 2rem;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+}
+
+#contact-page iframe {
+  width: 100%;
+}
+
+@media (min-width: 0px) and (max-width: 767px) {
+  #contact-page {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  #contact-page {
+    padding: 20px;
+  }
+}
+
 #waitlist-page {
   padding: 100px;
 }
@@ -611,6 +652,7 @@ body {
   background: #f4f8fb;
   padding: 100px;
   display: flex;
+  overflow: auto;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -674,7 +716,7 @@ body {
 }
 
 #food-preview .food-slider .slide {
-  width: 20%;
+  width: 100%;
   position: relative;
   height: 800px;
   cursor: pointer;
@@ -812,8 +854,12 @@ h2 {
     line-height: 1.4;
   }
 
-  #food-preview .food-slider .slide {
+  #food-preview .food-slider {
     width: 100%;
+  }
+
+  #food-preview .food-slider .slide {
+    width: 40%;
   }
 }
 

@@ -2,8 +2,10 @@
 <html lang="en">
 
 <head>
+
   <title>Billy Burger</title>
 
+  
   <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
@@ -46,6 +48,9 @@
           </li>
           <li>
             <a href="/contact">Contact</a>
+          </li>
+          <li>
+            <a href="/register">Admin</a>
           </li>
         </ul>
       </div>

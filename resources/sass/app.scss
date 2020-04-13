@@ -4,6 +4,7 @@
 @import "reset";
 @import "home";
 @import "pages/about";
+@import "pages/contact";
 @import "pages/waitlist";
 @import "pages/offers";
 @import "pages/menu/index";
@@ -223,6 +224,7 @@ background: radial-gradient(ellipse at center, #ed4852 0%,#9c1b24 100%); /* W3C,
   background: #f4f8fb;
   padding: 100px;
   display: flex;
+  overflow: auto;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -278,7 +280,7 @@ background: radial-gradient(ellipse at center, #ed4852 0%,#9c1b24 100%); /* W3C,
       transform: translate3d(-0%, 0, 0);
     }
     .slide{
-      width: 20%;
+      width: 100%;
       position: relative;
       height: 800px;
       cursor: pointer;
@@ -409,8 +411,11 @@ h2{
       line-height: 1.4;
     }
     .food-slider{
+      width: 100%;
+      
       .slide{
-        width: 100%;
+        width: 40%;
+       
       }
     }
   }

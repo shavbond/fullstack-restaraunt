@@ -12,13 +12,14 @@ class GeneralSettingSeeder extends Seeder
      */
     public function run()
     {
+        
         DB::table('general_settings')->insert([
             'site_title' => 'Billys Burgers',
-            'address_1' => '234 Main st',
+            'address_1' => '180 Main St',
             'address_2' => '',
-            'city' => 'New York',
+            'city' => 'Staten Island',
             'state' => 'NY',
-            'zipcode' => '11385',
+            'zipcode' => '10307',
             'phone_number' => '347-231-4545',
             'updated_at' => Carbon::now(), 
             'created_at' => Carbon::now()

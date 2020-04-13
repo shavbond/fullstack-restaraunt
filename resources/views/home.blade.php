@@ -1,6 +1,8 @@
 @extends('layouts.landing')
 
+@section('title')
 
+@endsection
 
 @section('content')
 <section id="information">
@@ -19,15 +21,11 @@
         et
  </p>
     </div>
-    <a href="#" class="about-link">
-      <span>Learn more about restaurants</span>
-      <div class="circle-right"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
-    </a>
   </div>
 </section>
 <section id="food-preview">
   <h2>We have everything you need to kill your hunger</h2>
-  {{-- <div class="button-rounded">View Our Menu</div> --}}
+
   <div class="container">
     <div class="left-btn">
       <i class="fa fa-chevron-left" aria-hidden="true"></i>
@@ -135,27 +133,10 @@
   </div>
 
 </section>
+
+
 @endsection
 
 
 
 
-{{-- @extends('layouts.app')
-
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                   
-
-                    You are logged in!
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection --}}

@@ -37,7 +37,7 @@ class SettingController extends Controller
         
         $general_setting = GeneralSetting::find($id);
         $general_setting->site_title = request('site_title');
-        $general_setting->address_1 = request('address_1');
+        $general_settings->address_1 = request('address_1');
         $general_setting->address_2 = request('address_2');
         $general_setting->city = request('city');
         $general_setting->state = request('state');
@@ -92,7 +92,7 @@ class SettingController extends Controller
         $social_setting ->instagram_url = request('instagram_url');
         $social_setting ->twitter_url = request('twitter_url');
 
-        return redirect('/admin/settings/social ');
+        return redirect('/admin/settings/social');
 
     }
 }
